@@ -20,8 +20,11 @@ public class EmployeePayroll {
             con = DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("connection done successful!!" + con);
             Statement statement=con.createStatement();
-            statement.execute("update employee set Gender='male' where id  between 1 and 3");
-            ResultSet resultSet =statement.executeQuery("select * from employee");
+//            statement.execute();
+            ResultSet resultSet =statement.executeQuery("select Gender,sum(salary) as sum," +
+                    "avg(salary) \n" +
+                    "as average,max(salary) as maximum,min(salary) as minimum\n" +
+                    "from employee group by Gender");
             while(resultSet.next()){
                 System.out.println("id:"+resultSet.getInt("id"));
                 System.out.println("name:"+resultSet.getString("name"));
