@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f64a6cf0-f378-46b1-9c70-89f335becbb7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/jdbc/EmployeePayroll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/jdbc/EmployeePayroll.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/bridgelabz/jdbc/EmployeePayroll.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/bridgelabz/jdbc/EmployeePayroll.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
