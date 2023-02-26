@@ -20,16 +20,9 @@ public class EmployeePayroll {
             con = DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("connection done successful!!" + con);
             Statement statement=con.createStatement();
-//            statement.execute("create table employee(id int auto_increment,name varchar(30),\n" +
-//                    "salary double,department varchar(30),Joining_Date date,\n" +
-//                    "primary key(id))");
-            statement.execute("insert into employee(name,salary,department,\n" +
-                    "joining_date) values ('R',300000,\n" +
-                    "'Analyst','2019-12-09'),('P',500000,\n" +
-                    "'Developer','2018-09-06'),('S',600000,\n" +
-                    "'ML Engineer','2017-11-08'),('Q',900000,\n" +
-                    "'DevOps Engineer','2019-03-07') ");
-            ResultSet resultSet =statement.executeQuery("select * from employee");
+//            statement.execute("select name,salary from employee where name='P' ");
+            ResultSet resultSet =statement.executeQuery("select * from employee where \n" +
+                    "joining_date between '2017-11-08' and '2018-12-09'");
             while(resultSet.next()){
                 System.out.println("id:"+resultSet.getInt("id"));
                 System.out.println("name:"+resultSet.getString("name"));
