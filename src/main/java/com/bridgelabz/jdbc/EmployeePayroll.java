@@ -20,11 +20,9 @@ public class EmployeePayroll {
             con = DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("connection done successful!!" + con);
             Statement statement=con.createStatement();
-//            statement.execute();
-            ResultSet resultSet =statement.executeQuery("select Gender,sum(salary) as sum," +
-                    "avg(salary) \n" +
-                    "as average,max(salary) as maximum,min(salary) as minimum\n" +
-                    "from employee group by Gender");
+            statement.execute("alter table employee add column phone varchar(30)");
+            statement.execute("alter table employee add column address varchar(90)");
+            ResultSet resultSet =statement.executeQuery("select * from employee");
             while(resultSet.next()){
                 System.out.println("id:"+resultSet.getInt("id"));
                 System.out.println("name:"+resultSet.getString("name"));
@@ -32,6 +30,8 @@ public class EmployeePayroll {
                 System.out.println("department:"+resultSet.getString("department"));
                 System.out.println("Joining_Date:"+resultSet.getDate("Joining_Date"));
                 System.out.println("Gender:"+resultSet.getString("Gender"));
+                System.out.println("Phone:"+resultSet.getString("phone"));
+                System.out.println("Address:"+resultSet.getString("address"));
             }
         } catch (Exception e) {
             e.printStackTrace();
